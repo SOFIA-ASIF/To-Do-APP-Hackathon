@@ -6,17 +6,18 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "click>=8.1.7",
+    "rich>=13.7.0",
 ]
 
 [project.scripts]
-todo = "cli.main:cli"
+todo = "todo_cli.cli.main:cli"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=45", "wheel", "setuptools-scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
 
-[tool.uv]
-dev-dependencies = [
-    "pytest>=7.4.3",
-    "pytest-cov>=4.1.0",
-]
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+todo_cli = ["py.typed"]
