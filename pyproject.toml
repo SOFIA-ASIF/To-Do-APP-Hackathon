@@ -1,0 +1,22 @@
+[project]
+name = "todo-cli"
+version = "0.1.0"
+description = "A simple CLI-based todo list manager"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1.7",
+]
+
+[project.scripts]
+todo = "cli.main:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=7.4.3",
+    "pytest-cov>=4.1.0",
+]

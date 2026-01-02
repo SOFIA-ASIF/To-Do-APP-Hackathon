@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/bash/create-phr.sh:*)",
+      "Bash(git fetch:*)",
+      "Bash(__NEW_LINE__ .specify/scripts/powershell/create-new-feature.ps1 -Json \"FEATURE: Todo CLI — Phase I\n\nACTOR\n- User\n\nGOAL\n- Manage a list of todos from the command line during a single runtime session.\n\nSCOPE\n- Add todo\n- View todos\n- Update todo\n- Delete todo\n- Mark todo as completed\n- In-memory storage only\n\nDATA MODEL\n- Todo:\n  - id: integer (auto-increment, unique)\n  - title: string (required)\n  - completed: boolean (default: false)\n\nBEHAVIOR\n\n1. Add Todo\n- User provides a non-empty title.\n- System assigns a unique ID.\n- Todo is stored in memory.\n- Confirmation message is shown.\n\n2. View Todos\n- System displays all todos.\n- Each todo shows ID, title, and completion status.\n- Todos are listed in creation order.\n- If no todos exist, display an informative message.\n\n3. Update Todo\n- User provides a valid todo ID and a new non-empty title.\n- System updates the title.\n- ID and completion status remain unchanged.\n- Confirmation message is shown.\n\n4. Delete Todo\n- User provides a valid todo ID.\n- Todo is removed from memory.\n- Confirmation message is shown.\n\n5. Complete Todo\n- User\" -Number 3 -ShortName \"todo-cli\")",
+      "Bash(powershell -Command:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
